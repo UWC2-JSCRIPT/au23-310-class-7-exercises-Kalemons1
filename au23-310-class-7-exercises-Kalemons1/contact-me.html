@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contact-me.css"/>
+  </head>
+
+  <body>
+    <h1> Contact Me</h1>
+    <form id = "contact-form"></form>
+    <div>
+      <label for = "name">Name:</label>
+      <input type = "text" id = "name" name = "name" required minlength="3">
+      <span class="error" id="name-error"></span>
+  </div>
+  <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required pattern="\w+@\w+\.\w+">
+      <span class="error" id="email-error"></span>
+  </div>
+  <div>
+      <label for="reason">Reason for contacting:</label>
+      <select id="reason" name="reason" onchange="toggleFields()">
+          <option value="" selected disabled>Select one</option>
+          <option value="job">Job opportunity</option>
+          <option value="code">Talk code</option>
+      </select>
+  </div>
+  <div id="jobFields" class="hidden">
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="jobTitle" name="jobTitle">
+      <br>
+      <label for="companyWebsite">Company Website:</label>
+      <input type="url" id="companyWebsite" name="companyWebsite">
+  </div>
+  <div id="codeFields" class="hidden">
+      <label for="codingLanguage">Coding Language:</label>
+      <input type="text" id="codingLanguage" name="codingLanguage">
+  </div>
+  <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required minlength="10"></textarea>
+      <span class="error" id="message-error"></span>
+  </div>
+  <div>
+      <input type="submit" value="Submit">
+  </div>
+</form>
+
+<script src = "contact-me.js"></script>
+    
+  </body>
+</html>
